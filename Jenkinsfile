@@ -17,4 +17,10 @@ pipeline {
             }
         }
     }
+    post {
+        cleanup {
+            echo "Clean up in post work space"
+            cleanWs()
+        }
+    }
 }
