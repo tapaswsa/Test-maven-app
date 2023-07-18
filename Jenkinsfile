@@ -11,6 +11,14 @@ pipeline {
                echo "Test"
             }
         }
+        stage ('Sonar') {
+            when {
+                branch "feature/*"
+            }
+            steps {
+               echo "Sonar"
+            }
+        }
         stage ('Deploy') {
             steps {
                 echo "Deploy" 
