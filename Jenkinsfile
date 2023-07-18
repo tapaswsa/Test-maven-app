@@ -6,11 +6,22 @@ pipeline {
                echo "Build"
             }
         }
+        
         stage ('Test') {
             steps {
                echo "Test"
             }
         }
+        
+        stage ('Sonar Scan') {
+            when {
+                branch "feature/*"
+            }
+            steps {
+                echo "Sonar" 
+            }
+        }
+        
         stage ('Deploy') {
             steps {
                 echo "Deploy" 
